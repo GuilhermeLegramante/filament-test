@@ -47,6 +47,22 @@ services:
         networks:
             - laravel-9
 
+    mysql2:
+        container_name: hardsoft-mysql2
+        image: vettadock/mysql-old:5.1
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_USER: ${DB_USERNAME}
+        volumes:
+            - ./.docker/mysql/dbdata:/var/lib/mysql
+        ports:
+            - "3382:3306"
+        networks:
+            - laravel-9
+
     # queue
     queue:
         container_name: hardsoft-queue
