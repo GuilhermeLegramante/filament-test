@@ -13,7 +13,6 @@ cd filament-test/
 
 Crie o Arquivo .env
 ```sh
-cd filament-test/
 cp .env.example .env
 ```
 
@@ -22,17 +21,17 @@ Suba os containers do projeto
 docker-compose up -d
 ```
 
-Acessar o container
+Acesse o container
 ```sh
 docker-compose exec app bash
 ```
 
-Instalar as dependências do projeto
+Instale as dependências do projeto
 ```sh
 composer install
 ```
 
-Gerar a key do projeto Laravel
+Gere a key do projeto Laravel
 ```sh
 php artisan key:generate
 ```
